@@ -35,3 +35,12 @@ body {
 h1, h2, h3, h4, h5, h6 {
     font-size: 1em;
 }
+
+/* HEADER */
+.header-title {
+    font-size: 5.6rem;
+    text-align: center;
+    padding: 30px;
+    background-color: #f3f3f3;
+    box-shadow: 3px 3px 5px #e3e3e3;
+}
