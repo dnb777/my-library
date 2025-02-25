@@ -38,6 +38,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* HEADER */
 .header-title {
+    font-family: "Karrik-regular", 'Helvetica', sans-serif;
     font-size: 5.6rem;
     text-align: center;
     padding: 30px;
