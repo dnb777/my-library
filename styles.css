@@ -45,3 +45,31 @@ h1, h2, h3, h4, h5, h6 {
     background-color: #f3f3f3;
     box-shadow: 3px 3px 5px #e3e3e3;
 }
+
+/* BOOKS CONTAINER */
+.books-container {
+    padding: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    max-width: 400px;
+    height: 200px;
+    padding: 20px 30px;
+    background-color: #fafafa;
+    border: 1px solid #e3e3e3;
+    border-radius: 15px;
+    box-shadow: 3px 5px 5px#e2e2e2;
+}
+
+.card h3 {
+    font-size: 2rem;
+    border-bottom: 1px solid black;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 1.8rem;
+}
