@@ -53,13 +53,36 @@ button {
 }
 
 /* HEADER */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #f3f3f3;
+    box-shadow: 3px 3px 5px #e3e3e3;
+}
+
 .header-title {
     font-family: "Karrik-regular", 'Helvetica', sans-serif;
     font-size: 5.6rem;
     text-align: center;
     padding: 30px;
-    background-color: #f3f3f3;
-    box-shadow: 3px 3px 5px #e3e3e3;
+}
+
+.add-new-book {
+    width: 70px;
+    height: 70px;
+    fill: #FFF;
+    background-color: #777777;
+    border-radius: 15px;
+    transition: all .2s ease-in-out;
+}
+
+.add-new-book:hover {
+    background-color: #000;
+    fill: #FFF;
+}
+.add-new-book:active {
+    transform: scale(1.1);
 }
 
 /* BOOKS CONTAINER */
