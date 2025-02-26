@@ -16,6 +16,7 @@ function addBookToLibrary(title, author, pages, status) {
 }
 
 function displayBooks() {
+    cardsContainer.innerHTML = "";
     myLibrary.forEach((book) => {
         createBookCard(book.title, book.author, book.pages, book.status);
     })
@@ -43,3 +44,12 @@ function createBookCard(title, author, pages, status) {
     card.appendChild(bookPages);
     card.appendChild(bookStatus);
 }
+
+
+// Dummy content
+addBookToLibrary("The Hobbit", "J. R. R. Tolkien", 310, false);
+addBookToLibrary("A Princess of Mars", "Edgar Rice Burroughs", 326, true);
+addBookToLibrary("Siddhartha", "Hermann Hesse", 152, true);
+addBookToLibrary("Animal Farm", "George Orwell", 92, true);
+addBookToLibrary("1984", "George Orwell", 326, false);
+addBookToLibrary("1984", "George Orwell", 326, false);
