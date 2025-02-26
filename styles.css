@@ -30,6 +30,7 @@ html {
 body {
     font-size: 1.6rem;
     font-family: 'Helvetica', 'Arial', sans-serif;
+    position: relative;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -64,11 +65,10 @@ button {
 .header-title {
     font-family: "Karrik-regular", 'Helvetica', sans-serif;
     font-size: 5.6rem;
-    text-align: center;
     padding: 30px;
 }
 
-.add-new-book {
+.show-dialog {
     width: 70px;
     height: 70px;
     fill: #FFF;
@@ -77,11 +77,11 @@ button {
     transition: all .2s ease-in-out;
 }
 
-.add-new-book:hover {
+.show-dialog:hover {
     background-color: #000;
     fill: #FFF;
 }
-.add-new-book:active {
+.show-dialog:active {
     transform: scale(1.1);
 }
 
@@ -92,7 +92,6 @@ button {
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 30px;
 }
-
 .card {
     max-width: 400px;
     height: 200px;
@@ -101,6 +100,8 @@ button {
     border: 1px solid #e3e3e3;
     border-radius: 15px;
     box-shadow: 3px 5px 5px#e2e2e2;
+    /* position: relative;
+    transition: all 0.8s ease-in-out; */
 }
 
 .card h3 {
@@ -111,4 +112,80 @@ button {
 
 .card p {
     font-size: 1.8rem;
+}
+
+/* MODAL FORM */
+.dialog {
+    position: absolute;
+    top: 100px;
+    left: calc(50% - 225px);
+    width: 450px;
+    padding: 30px 50px;
+    position: relative;
+}
+dialog::backdrop {
+    background-color: rgba(255, 255, 255, 0.267);
+    
+  }
+  
+.close {
+    position: absolute;
+    right: 10px;
+    top: 0px;
+    font-size: 4rem;
+    font-weight: bold;
+    color: rgb(95, 95, 95);
+}
+.form-title {
+    font-size: 3.2rem;
+    text-align: center;
+}
+
+.new-book-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-row {
+    display: flex;
+    flex-direction: column;
+    gap:3px;
+    padding: 10px 0;
+}
+
+.form-row label,
+.legend {
+    font-weight: bold;
+    color: rgb(94, 94, 94);
+}
+
+.form-row input[type="text"],
+.form-row input[type="tel"] {
+    height: 25px;
+    border-radius: 5px;
+    outline: none;
+    border: 2px solid rgb(95, 95, 95);
+    font-family: inherit;
+    font-size: 1.6rem;
+    color: rgb(19, 19, 19);
+    padding: 0 5px;
+}
+
+ul li {
+    list-style-type: none;
+    padding: 3px 0;
+}
+
+.new-book-form fieldset {
+    border: none;
+}
+
+button.add-book {
+    width: 100%;
+    margin-top: 20px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    padding: 15px 20px;
+    background-color: rgb(46, 109, 247);
+    color: whitesmoke;
 }
