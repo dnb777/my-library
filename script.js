@@ -4,7 +4,6 @@ const cardsContainer = document.querySelector('.books-container');
 const dialog = document.querySelector('.dialog');
 const form = document.querySelector('.new-book-form');
 const showDialogButton = document.querySelector('.show-dialog');
-const closeDialogButotn = document.querySelector('.close');
 const addBookButton =  document.querySelector('.add-book');
 
 function Book(title, author, pages, status) {
