@@ -100,7 +100,7 @@ button {
     border: 1px solid #e3e3e3;
     border-radius: 15px;
     box-shadow: 3px 5px 5px#e2e2e2;
-    /* position: relative;
+    position: relative;
     transition: all 0.8s ease-in-out; */
 }
 
@@ -112,6 +112,20 @@ button {
 
 .card p {
     font-size: 1.8rem;
+}
+
+.card .buttons-container {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    display: flex;
+    flex-direction: row-reverse;
+}
+.card .icon:hover {
+    fill: #000;
+}
+.card .icon:active {
+    transform: scale(1.1);
 }
 
 /* MODAL FORM */
