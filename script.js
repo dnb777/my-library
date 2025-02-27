@@ -14,6 +14,10 @@ function Book(title, author, pages, status) {
     this.status = status;
 }
 
+Book.prototype.changeStatus = function() {
+    this.status = (this.status == 'read' ? 'unread' : 'read')
+}
+
 function addBookToLibrary(title, author, pages, status) {
     const newBook = new Book(title, author, pages, status);
     myLibrary.push(newBook);
@@ -22,12 +26,12 @@ function addBookToLibrary(title, author, pages, status) {
 
 function displayBooks() {
     cardsContainer.innerHTML = "";
-    myLibrary.forEach((book) => {
-        createBookCard(book.title, book.author, book.pages, book.status);
+    myLibrary.forEach((book, index) => {
+        createBookCard(book.title, book.author, book.pages, book.status, index);
     })
 }
 
-function createBookCard(title, author, pages, status) {
+function createBookCard(title, author, pages, status, index) {
     const card = document.createElement('div');
     card.classList.add('card');
 
@@ -43,11 +47,28 @@ function createBookCard(title, author, pages, status) {
     const bookStatus = document.createElement('p');
     bookStatus.textContent = `Status: ${(status == 'true') ? "Already read" : "Not read yet"}`;
 
+    const deleteBtn = document.createElement('button');
+    deleteBtn.setAttribute('data-index', index)
+    deleteBtn.classList.add('icon', 'delete-button');
+    deleteBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" ><path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/></svg>`;
+
+    deleteBtn.addEventListener('click', (e) => {
+        const remove = e.currentTarget.dataset.index;
+        console.log(remove)
+        myLibrary.splice(remove, 1);
+        displayBooks();
+    })
+
+    const changeStatusButton = document.createElement('button');
+    changeStatusButton.classList.add('icon', 'change-status-button');
+    changeStatusButton.innerHTML = ``
+
     cardsContainer.appendChild(card);
     card.appendChild(bookTitle);
     card.appendChild(bookAuthor);
     card.appendChild(bookPages);
     card.appendChild(bookStatus);
+    card.appendChild(deleteBtn);
 }
 
 
@@ -69,6 +90,8 @@ addBookButton.addEventListener('click', (e) => {
     dialog.close()
     form.reset();
 })
+
+
 
 // Dummy content
 addBookToLibrary("The Hobbit", "J. R. R. Tolkien", 310, "false");
